@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  grafana:
+    image: grafana/grafana
+    networks:
+      - psmonitoring-prometheus
+    ports:
+      - published: 3000
+        target: 3000
+
+networks:
+  psmonitoring-prometheus:
+    driver: bridge
